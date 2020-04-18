@@ -8,9 +8,15 @@ LABEL \
   org.label-schema.vendor="avto-dev" \
   org.label-schema.vcs-url="https://github.com/avto-dev/open-rpc-docs-builder-docker"
 
+RUN set -x \
+    && mkdir /app \
+    && chown node:node /app
+
+USER node:node
+
 WORKDIR /app
 
-COPY . ./
+COPY --chown=node . ./
 
 RUN set -x \
   && yarn install --network-timeout 100000 --production=true \
