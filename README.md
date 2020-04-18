@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://habrastorage.org/webt/bl/zs/iw/blzsiwdibuwuxbrz4sfx2av0pew.png" alt="App Logotype" width="100" />
+  <img src="https://hsto.org/webt/nc/kx/au/nckxaurura8zfd6pxx5vdh_ssw4.png" alt="Logo" width="120" />
 </div>
 
 # OpenRPC documentation builder
@@ -35,6 +35,7 @@ Run into your shell (your open-rpc schema must be located in `./path/to/your/ope
 
 ```shell script
 $ mkdir ./public # create directory for generated assets
+
 $ docker run \
     --rm \
     --user "$(id -u):$(id -g)" \
@@ -66,9 +67,9 @@ COPY --from=builder /app/build /public
 
 ## Releasing
 
-New versions publishing is very simple - just update dependencies version(s) in `./package.json` file and "publish" new release using repo releases page. This action will trigger building of minor and patch image tags (eg.: release `v1.2.3` will create or update images with tags `1.2` and `1.2.3`).
+New versions publishing is very simple - just update dependencies version(s) in `./package.json` file and "publish" new release using repo releases page. This action will trigger building of minor and patch image tags (eg.: release `v1.2.3` will create or update docker images with tags `1.2` and `1.2.3`).
 
-> Release version _(and git tag, of course)_ MUST starts with `v` prefix (eg.: `v0.0.1` or `v1.2.3-RC1`)
+> Release version _(and git tag, of course)_ MUST starts with `v` prefix (eg.: `v0.0.1` or `v1.2.3-RC1`) and follows semantic versioning rules
 >
 > Do not forget to update docker image version tag in "usage example" above
 
